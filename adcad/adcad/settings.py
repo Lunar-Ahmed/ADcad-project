@@ -74,12 +74,28 @@ WSGI_APPLICATION = 'adcad.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'mssql',
+        'NAME': 'cad',
+        'USER' : '',
+        'PASSWORD': '',
+        'HOST': 'localhost', 
+        'PORT': '1433',
+        'OPTIONS': {
+            'driver':'ODBC Driver 17 for SQL Server',
+            'Trusted_connection':'yes',
+        }
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # Password validation
