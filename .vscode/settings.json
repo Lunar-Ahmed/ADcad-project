@@ -1,11 +1,3 @@
-    {
-        "emmet.includeLanguages": {
-            "html": "html",
-            "javascript": "javascriptreact",
-            "typescript": "typescriptreact"
-        },
-        "emmet.triggerExpansionOnTab": true
 
-    }
     
     
