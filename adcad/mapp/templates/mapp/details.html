@@ -5,11 +5,13 @@
 {% endblock %}
 
 {% block content %}
-<h1>{{ mystaff.firstname }} {{ mystaff.lastname }}</h1>
+    <div class="mycard">
+        <h1>{{ mystaff.firstname }} {{ mystaff.lastname }}</h1>
   
-<p>Phone: {{ mygroup.phone }}</p>
-<p>Member since: {{ mygroup.joined_date }}</p>
+        <p>Phone: {{ mygroup.phone }}</p>
+        <p>Member since: {{ mygroup.joined_date }}</p>
 
-<p>Back to <a href="/group">Members</a></p>
+        <p>Back to <a href="/group">Members</a></p>
+    </div>
 
 {% endblock %}
