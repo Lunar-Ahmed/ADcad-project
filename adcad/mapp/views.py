@@ -27,3 +27,7 @@ def details(request, id):
         'mystaff': mystaff,
     }
     return HttpResponse(template.render(context, request))
+
+def main(request):
+  template = loader.get_template('mapp/main.html')
+  return HttpResponse(template.render())
