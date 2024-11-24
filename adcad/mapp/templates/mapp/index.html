@@ -1,7 +1,11 @@
 {% extends "masterhtml" %}
 
 {% block title %}
+    ADcad Investment Group - List of all members and staff
 
+{% endblock %}
+
+{% block content %}
     <h1>Staff</h1>
 
     <ul>
@@ -9,5 +13,4 @@
         <li><a href="details/{{ x.id }}">{{ x.firstname }} {{ x.lastname }}</a></li>
         {% endfor %}
     </ul>
-</body>
-</html>
+{% endblock %}

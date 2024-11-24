@@ -1,8 +1,10 @@
-<!DOCTYPE html>
-<html>
+{% extends "master.html" %}
 
-<body>
+{% block title %}
+  Details about {{ mystaff.firstname }} {{ mystaff.lastname }}
+{% endblock %}
 
+{% block content %}
 <h1>{{ mystaff.firstname }} {{ mystaff.lastname }}</h1>
   
 <p>Phone: {{ mygroup.phone }}</p>
@@ -10,5 +12,4 @@
 
 <p>Back to <a href="/group">Members</a></p>
 
-</body>
-</html>
+{% endblock %}
