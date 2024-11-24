@@ -11,9 +11,8 @@
 
     <ul>
         {% for x in mygroup %}
-        <li>{{ x.firstname }} {{ x.lastname }} </li>
+        <li><a href="details/{{ x.id }}">{{ x.firstname }} {{ x.lastname }}</a></li>
         {% endfor %}
     </ul>
-    
 </body>
 </html>
