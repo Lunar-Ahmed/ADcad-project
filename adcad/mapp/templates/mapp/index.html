@@ -11,7 +11,7 @@
 
         <ul>
             {% for x in mygroup %}
-            <li onclick="window.location = 'detials/{{ x.id }}'">{{ x.firstname }} {{ x.lastname }}</a></li>
+            <li onclick="window.location = 'details/{{ x.id }}'">{{ x.firstname }} {{ x.lastname }}</a></li>
             {% comment %} <li><a href="details/{{ x.id }}">{{ x.firstname }} {{ x.lastname }}</a></li> {% endcomment %}
             {% endfor %}
         </ul>

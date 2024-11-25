@@ -2,6 +2,7 @@ from django.db import models
 
 
 class Group(models.Model):
+    passport = models.ImageField(upload_to='images/')
     firstname = models.CharField(max_length=255)
     lastname = models.CharField(max_length=255)
     phone = models.IntegerField(null=True)
