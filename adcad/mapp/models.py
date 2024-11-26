@@ -8,6 +8,7 @@ class Group(models.Model):
     phone = models.IntegerField(null=True)
     email = models.EmailField(null=True)
     joined_date = models.DateField(null=True)
+    About = models.CharField(null=True, max_length=1000)
     DOB = models.DateField(null=True)
     
     
