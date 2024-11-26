@@ -9,7 +9,7 @@ class Group(models.Model):
     email = models.EmailField(null=True)
     joined_date = models.DateField(null=True)
     about = models.CharField(max_length=10000)
-    DOB = models.DateField()
+    DOB = models.DateField(null=True)
     
     
     def __str__(self):
