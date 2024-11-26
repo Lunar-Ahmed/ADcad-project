@@ -5,8 +5,11 @@
 {% endblock %}
 
 {% block content %}
-    <div class="mycard">
-        <h1>{{ mystaff.firstname }} {{ mystaff.lastname }}</h1>
+    <div class="mycard" id="mycard">
+        <div class="dets">
+            <img id="img" src="{{ mystaff.passport.url }}" alt="{{ mystaff.title }}">
+            <h1>{{ mystaff.firstname }} {{ mystaff.lastname }}</h1>
+        </div>
   
         <p>Phone: {{ mygroup.phone }}</p>
         <p>Member since: {{ mygroup.joined_date }}</p>
