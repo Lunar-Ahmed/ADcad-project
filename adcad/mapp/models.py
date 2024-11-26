@@ -9,6 +9,8 @@ class Group(models.Model):
     email = models.EmailField(null=True)
     joined_date = models.DateField(null=True)
     about = models.CharField(max_length=10000)
+    DOB = models.DateField()
+    
     
     def __str__(self):
         return f"{self.firstname} {self.lastname}"
