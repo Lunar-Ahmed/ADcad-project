@@ -10,9 +10,9 @@
         <h1>Members</h1>
 
         <ul>
-            {% for x in mygroup %}
-            <li onclick="window.location = 'details/{{ x.id }}'">{{ x.firstname }} {{ x.lastname }}</a></li>
-            {% comment %} <li><a href="details/{{ x.id }}">{{ x.firstname }} {{ x.lastname }}</a></li> {% endcomment %}
+            {% for g in mygroup %}
+                <li onclick="window.location = 'details/{{ g.id }}'">{{ g.firstname }} {{ g.lastname }}</a></li>
+                {% comment %} <li><a href="details/{{ x.id }}">{{ x.firstname }} {{ x.lastname }}</a></li> {% endcomment %}
             {% endfor %}
         </ul>
     </div>
