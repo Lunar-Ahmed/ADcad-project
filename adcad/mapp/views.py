@@ -38,3 +38,32 @@ def testing(request):
     'fruits': ['Apple', 'Banana', 'Cherry'],   
   }
   return HttpResponse(template.render(context, request))
+
+
+from django.shortcuts import render, redirect
+from .models import InputTable # Ensure Teacher model is imported
+from .forms import InputTableForm
+
+def table_view(request):
+    # Fetch all teacher names
+    teachers = Group.objects.all().values()
+    input_table = InputTable.objects.first()  # Get the first record
+    if not input_table:
+        input_table = InputTable.objects.create()
+
+    if request.method == 'POST':
+        form = InputTableForm(request.POST, instance=input_table)
+        if form.is_valid():
+            form.save()
+            return redirect('table_view')
+    else:
+        form = InputTableForm(instance=input_table)
+
+    context = {
+        'form': form,
+        'total': input_table.total(),
+        'teachers': teachers,
+    }
+
+    return render(request, 'mapp/table.html', context)
+

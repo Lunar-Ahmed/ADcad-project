@@ -12,3 +12,14 @@ class Group(models.Model):
     
     def __str__(self):
         return f"{self.firstname} {self.lastname}"
+    
+    
+from django.db import models
+
+class InputTable(models.Model):
+    input1 = models.FloatField(default=0)
+    input2 = models.FloatField(default=0)
+    input3 = models.FloatField(default=0)
+
+    def total(self):
+        return self.input1 + self.input2 + self.input3

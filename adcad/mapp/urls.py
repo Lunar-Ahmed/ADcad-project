@@ -7,4 +7,5 @@ urlpatterns = [
     path('group/details/<int:id>', views.details, name='details'),
     path('', views.main, name='main'),
     path('testing/', views.testing, name='testing'),  
+    path('table/', views.table_view, name='table_view'),
 ]
