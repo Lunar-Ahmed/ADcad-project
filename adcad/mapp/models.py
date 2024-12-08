@@ -17,6 +17,7 @@ class Group(models.Model):
 from django.db import models
 
 class InputTable(models.Model):
+    teacher = models.ForeignKey(Group, on_delete=models.CASCADE)
     input1 = models.FloatField(default=0)
     input2 = models.FloatField(default=0)
     input3 = models.FloatField(default=0)

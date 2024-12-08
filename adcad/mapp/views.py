@@ -67,3 +67,12 @@ def table_view(request):
 
     return render(request, 'mapp/table.html', context)
 
+# from django.shortcuts import render
+# from .models import InputTable
+
+# def display_inputs_view(request):
+#     input_data = InputTable.objects.select_related('teacher').all()
+#     context = {
+#         'input_data': input_data,
+#     }
+#     return render(request, 'display_inputs.html', context)
