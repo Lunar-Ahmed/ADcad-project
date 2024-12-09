@@ -40,32 +40,32 @@ def testing(request):
   return HttpResponse(template.render(context, request))
 
 
-from django.shortcuts import render, redirect
-from .models import InputTable # Ensure Teacher model is imported
-from .forms import InputTableForm
+# from django.shortcuts import render, redirect
+# from .models import InputTable # Ensure Teacher model is imported
+# from .forms import InputTableForm
 
-def table_view(request):
-    # Fetch all teacher names
-    teachers = Group.objects.all().values()
-    input_table = InputTable.objects.first()  # Get the first record
-    if not input_table:
-        input_table = InputTable.objects.create()
+# def table_view(request):
+#     # Fetch all teacher names
+#     teachers = Group.objects.all().values()
+#     input_table = InputTable.objects.first()  # Get the first record
+#     if not input_table:
+#         input_table = InputTable.objects.create()
 
-    if request.method == 'POST':
-        form = InputTableForm(request.POST, instance=input_table)
-        if form.is_valid():
-            form.save()
-            return redirect('table_view')
-    else:
-        form = InputTableForm(instance=input_table)
+#     if request.method == 'POST':
+#         form = InputTableForm(request.POST, instance=input_table)
+#         if form.is_valid():
+#             form.save()
+#             return redirect('table_view')
+#     else:
+#         form = InputTableForm(instance=input_table)
 
-    context = {
-        'form': form,
-        'total': input_table.total(),
-        'teachers': teachers,
-    }
+#     context = {
+#         'form': form,
+#         'total': input_table.total(),
+#         'teachers': teachers,
+#     }
 
-    return render(request, 'mapp/table.html', context)
+#     return render(request, 'mapp/table.html', context)
 
 # from django.shortcuts import render
 # from .models import InputTable
@@ -76,3 +76,9 @@ def table_view(request):
 #         'input_data': input_data,
 #     }
 #     return render(request, 'display_inputs.html', context)
+
+
+
+def table_view(request):
+    students = Group.objects.all()  # Fetch all students from the database
+    return render(request, 'mapp/table.html', {'students': students})

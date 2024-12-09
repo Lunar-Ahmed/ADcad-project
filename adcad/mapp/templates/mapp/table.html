@@ -147,7 +147,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% comment %} {% for teacher in teachers %} {% endcomment %}
+                    {% comment %} {% for student in students %} {% endcomment %}
+                    <tr>
+                      <td>{{ student.Firstname }} {{ student.Lastname }}</td>
+                      <td>{{ student.ca1 }}</td>
+                      <td>{{ student.ca2 }}</td>
+                      <td>{{ student.ca3 }}</td>
+                      <td>{{ student.total }}</td>
+                    </tr>
+                  {% comment %} {% endfor %} {% endcomment %}
+                    {% comment %} {% for teacher in teachers %}
                     <tr>
                         <td>Dominic Torerro</td>
                         <td><input type="number" id="id_input1" name="input1" value="{{ form.input1.value }}" readonly class="gray-input"></td>
@@ -156,7 +165,7 @@
                         <td id="total">0</td>
                         <td><button type="button" id="editButton">Edit</button></td>
                     </tr>
-                    {% comment %} {% endfor %} {% endcomment %}
+                    {% endfor %} {% endcomment %}
                 </tbody>
             </table>
             <p id="error-message" class="error"></p>
